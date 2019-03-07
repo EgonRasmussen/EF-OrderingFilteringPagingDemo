@@ -1,4 +1,4 @@
-﻿namespace QueryingData.Models
+﻿namespace DataLayer.Models
 {
     public class PersonPhoto
     {

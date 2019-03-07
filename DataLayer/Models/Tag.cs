@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace QueryingData.Models
+namespace DataLayer.Models
 {
     public class Tag
     {

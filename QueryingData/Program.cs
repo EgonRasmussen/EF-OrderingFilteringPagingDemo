@@ -9,7 +9,6 @@
 // SET NOCOUNT ON: This prevents the message from showing which contains the number of affected rows.
 
 using Microsoft.EntityFrameworkCore;
-using QueryingData.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
