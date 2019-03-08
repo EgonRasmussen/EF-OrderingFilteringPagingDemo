@@ -1,7 +1,7 @@
 ﻿using DataLayer.Models;
 using System.Linq;
 
-namespace ServiceLayer.BlogService
+namespace ServiceLayer.BlogService.QueryObjects
 {
     public static class BlogListDtoSelect
     {

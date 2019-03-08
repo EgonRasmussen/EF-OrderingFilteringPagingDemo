@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-namespace ServiceLayer.BlogService
+namespace ServiceLayer.BlogService.QueryObjects
 {
     public enum OrderByOptions
     {
