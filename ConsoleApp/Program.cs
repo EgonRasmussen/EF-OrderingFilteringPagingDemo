@@ -1,6 +1,6 @@
 ﻿// Tilføjet ServiceLayer.BlogService.BlogListDtoSort.cs
 // Tilføjet ServiceLayer.BlogService.SortFilterPageOptions.cs
-// Udvidet ServiceLayer.ListBlogService.cs med .OrderBlogsBy()
+// Udvidet ServiceLayer.BlogService.Concrete.ListBlogService.cs med .OrderBlogsBy()
 // Udvidet ConsoleApp.Program.cs med SortFilterPageOptions
 
 using DataLayer;
