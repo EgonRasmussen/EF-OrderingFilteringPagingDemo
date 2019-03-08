@@ -1,4 +1,5 @@
 ﻿using DataLayer;
+using DataLayer.QueryObjects;
 using Microsoft.EntityFrameworkCore;
 using ServiceLayer.BlogService.QueryObjects;
 using System.Linq;
@@ -20,8 +21,10 @@ namespace ServiceLayer.BlogService
                 .AsNoTracking()
                 .MapBlogToDto()
                 .OrderBlogsBy(options.OrderByOptions)
-                .FilterBlogsBy(options.FilterBy, options.FilterValue);  // Added
-            return blogsQuery;
+                .FilterBlogsBy(options.FilterBy, options.FilterValue);
+            
+                options.SetupRestOfDto(blogsQuery);                             // Added
+                return blogsQuery.Page(options.PageNum - 1, options.PageSize);  // Added
         }
     }
 }
