@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataLayer.Migrations
 {
     [DbContext(typeof(BloggingContext))]
-    [Migration("20190307171700_Initials")]
+    [Migration("20190308070124_Initials")]
     partial class Initials
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,18 +44,21 @@ namespace DataLayer.Migrations
                         {
                             BlogId = 1,
                             OwnerId = 1,
+                            Rating = 3,
                             Url = "http://blog1.com"
                         },
                         new
                         {
                             BlogId = 2,
                             OwnerId = 2,
+                            Rating = 2,
                             Url = "http://blog2.com"
                         },
                         new
                         {
                             BlogId = 3,
                             OwnerId = 3,
+                            Rating = 1,
                             Url = "http://blog3.com"
                         },
                         new

@@ -166,9 +166,9 @@ namespace DataLayer.Migrations
                 columns: new[] { "BlogId", "OwnerId", "Rating", "Url" },
                 values: new object[,]
                 {
-                    { 1, 1, null, "http://blog1.com" },
-                    { 2, 2, null, "http://blog2.com" },
-                    { 3, 3, null, "http://blog3.com" }
+                    { 1, 1, 3, "http://blog1.com" },
+                    { 2, 2, 2, "http://blog2.com" },
+                    { 3, 3, 1, "http://blog3.com" }
                 });
 
             migrationBuilder.InsertData(
