@@ -1,9 +1,7 @@
-﻿// DataLayer kræver følgende Nuget
-// Install-Package Microsoft.EntityFrameworkCore.SqlServer
-// Install-Package Microsoft.Extensions.Logging.Console
-// Install-Package Microsoft.EntityFrameworkCore.Tools
-// ConsoleApp kræver følgende NuGet:
-// Install-Package Microsoft.EntityFrameworkCore.Design
+﻿// Tilføjet ServiceLayer.BlogService.BlogListDtoSort.cs
+// Tilføjet ServiceLayer.BlogService.SortFilterPageOptions.cs
+// Udvidet ServiceLayer.ListBlogService.cs med .OrderBlogsBy()
+// Udvidet ConsoleApp.Program.cs med SortFilterPageOptions
 
 using DataLayer;
 using ServiceLayer.BlogService;
@@ -20,7 +18,10 @@ namespace ConsoleApp
             {
                 var blogService = new ListBlogService(context);
 
-                var blogs = blogService.SortFilterPage().ToList();
+                var blogs = blogService.SortFilterPage(new SortFilterPageOptions
+                {
+                    OrderByOptions = OrderByOptions.SimpleOrder
+                }).ToList();
 
                 foreach (BlogListDto blog in blogs)
                 {

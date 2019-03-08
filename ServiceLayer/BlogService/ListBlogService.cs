@@ -13,11 +13,12 @@ namespace ServiceLayer.BlogService
             _context = context;
         }
 
-        public IQueryable<BlogListDto> SortFilterPage()
+        public IQueryable<BlogListDto> SortFilterPage(SortFilterPageOptions options)
         {
             var blogsQuery = _context.Blogs
                 .AsNoTracking()
-                .MapBlogToDto();
+                .MapBlogToDto()
+                .OrderBlogsBy(options.OrderByOptions);      // Added Ordering
             return blogsQuery;
         }
     }
