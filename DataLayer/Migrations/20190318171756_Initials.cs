@@ -133,7 +133,13 @@ namespace DataLayer.Migrations
             migrationBuilder.InsertData(
                 table: "Blogs",
                 columns: new[] { "BlogId", "OwnerId", "Rating", "Url" },
-                values: new object[] { 4, null, null, "http://blog5.com" });
+                values: new object[,]
+                {
+                    { 1, null, 3, "http://blog1.com" },
+                    { 2, null, 2, "http://blog2.com" },
+                    { 3, null, 1, "http://blog3.com" },
+                    { 4, null, null, "http://blog5.com" }
+                });
 
             migrationBuilder.InsertData(
                 table: "Person",
@@ -162,16 +168,6 @@ namespace DataLayer.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Blogs",
-                columns: new[] { "BlogId", "OwnerId", "Rating", "Url" },
-                values: new object[,]
-                {
-                    { 1, 1, 3, "http://blog1.com" },
-                    { 2, 2, 2, "http://blog2.com" },
-                    { 3, 3, 1, "http://blog3.com" }
-                });
-
-            migrationBuilder.InsertData(
                 table: "PersonPhoto",
                 columns: new[] { "PersonPhotoId", "Caption", "PersonId", "Photo" },
                 values: new object[,]
@@ -188,12 +184,12 @@ namespace DataLayer.Migrations
                 columns: new[] { "PostId", "AuthorId", "BlogId", "Content", "Rating", "Title" },
                 values: new object[,]
                 {
+                    { 6, null, 3, "Dette er post 1 i Blog 3", 0, "Post 1" },
                     { 1, 1, 1, "Dette er Post 1 i Blog 1", 2, "Post 1" },
                     { 2, 4, 1, "Dette er Post 2 i Blog 1", 3, "Post 2" },
                     { 3, 4, 1, "Dette er Post 3 i Blog 1", 4, "Post 3" },
                     { 4, 5, 2, "Dette er post 1 i Blog 2", 0, "Post 1" },
-                    { 5, 6, 2, "Dette er post 2 i Blog 2", 0, "Post 2" },
-                    { 6, null, 3, "Dette er post 1 i Blog 3", 0, "Post 1" }
+                    { 5, 6, 2, "Dette er post 2 i Blog 2", 0, "Post 2" }
                 });
 
             migrationBuilder.InsertData(
@@ -201,13 +197,13 @@ namespace DataLayer.Migrations
                 columns: new[] { "PostTagId", "PostId", "TagId" },
                 values: new object[,]
                 {
+                    { 7, 6, "News" },
                     { 1, 1, "Sport" },
                     { 2, 2, "Sport" },
                     { 3, 2, "News" },
                     { 4, 3, "News" },
                     { 5, 4, "Living" },
-                    { 6, 5, "Photo" },
-                    { 7, 6, "News" }
+                    { 6, 5, "Photo" }
                 });
 
             migrationBuilder.CreateIndex(

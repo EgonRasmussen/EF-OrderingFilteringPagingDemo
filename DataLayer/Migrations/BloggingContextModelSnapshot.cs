@@ -41,21 +41,18 @@ namespace DataLayer.Migrations
                         new
                         {
                             BlogId = 1,
-                            OwnerId = 1,
                             Rating = 3,
                             Url = "http://blog1.com"
                         },
                         new
                         {
                             BlogId = 2,
-                            OwnerId = 2,
                             Rating = 2,
                             Url = "http://blog2.com"
                         },
                         new
                         {
                             BlogId = 3,
-                            OwnerId = 3,
                             Rating = 1,
                             Url = "http://blog3.com"
                         },

@@ -1,9 +1,9 @@
-﻿// DataLayer kræver følgende Nuget
-// Install-Package Microsoft.EntityFrameworkCore.SqlServer
-// Install-Package Microsoft.Extensions.Logging.Console
-// Install-Package Microsoft.EntityFrameworkCore.Tools
+﻿// DataLayer kræver følgende Nugets
+//      Install-Package Microsoft.EntityFrameworkCore.SqlServer
+//      Install-Package Microsoft.Extensions.Logging.Console
+//      Install-Package Microsoft.EntityFrameworkCore.Tools
 // ConsoleApp kræver følgende NuGet:
-// Install-Package Microsoft.EntityFrameworkCore.Design
+//      Install-Package Microsoft.EntityFrameworkCore.Design
 
 using DataLayer;
 using ServiceLayer.BlogService;

@@ -22,20 +22,19 @@ namespace DataLayer
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Blog>()
+                .HasOne(b => b.Owner)
+                .WithMany(p => p.OwnedBlogs)
+                .HasForeignKey(b => b.OwnerId)
+                .IsRequired(false);
+
+
             modelBuilder.Entity<Person>()
                 .HasOne(p => p.Photo)
                 .WithOne(p => p.Person)
                 .HasForeignKey<PersonPhoto>(p => p.PersonId);
 
             // ************************ Data Seeding ***************************
-            modelBuilder.Entity<PersonPhoto>().HasData(
-                new PersonPhoto { PersonPhotoId = 1, Caption = "PersonPhoto 1", Photo = new byte[] { 65, 66, 67 }, PersonId = 1 },
-                new PersonPhoto { PersonPhotoId = 2, Caption = "PersonPhoto 2", Photo = new byte[] { 68, 69, 70 }, PersonId = 2 },
-                new PersonPhoto { PersonPhotoId = 3, Caption = "PersonPhoto 3", Photo = new byte[] { 71, 72, 73 }, PersonId = 3 },
-                new PersonPhoto { PersonPhotoId = 4, Caption = "PersonPhoto 4", Photo = new byte[] { 74, 75, 76 }, PersonId = 4 },
-                new PersonPhoto { PersonPhotoId = 5, Caption = "PersonPhoto 5", Photo = new byte[] { 77, 78, 79 }, PersonId = 5 }
-                );
-
             modelBuilder.Entity<Person>().HasData(
                new Person { PersonId = 1, Name = "Person 1" },
                new Person { PersonId = 2, Name = "Person 2" },
@@ -45,10 +44,19 @@ namespace DataLayer
                new Person { PersonId = 6, Name = "Person 6" }
                );
 
+            modelBuilder.Entity<PersonPhoto>().HasData(
+                new PersonPhoto { PersonPhotoId = 1, Caption = "PersonPhoto 1", Photo = new byte[] { 65, 66, 67 }, PersonId = 1 },
+                new PersonPhoto { PersonPhotoId = 2, Caption = "PersonPhoto 2", Photo = new byte[] { 68, 69, 70 }, PersonId = 2 },
+                new PersonPhoto { PersonPhotoId = 3, Caption = "PersonPhoto 3", Photo = new byte[] { 71, 72, 73 }, PersonId = 3 },
+                new PersonPhoto { PersonPhotoId = 4, Caption = "PersonPhoto 4", Photo = new byte[] { 74, 75, 76 }, PersonId = 4 },
+                new PersonPhoto { PersonPhotoId = 5, Caption = "PersonPhoto 5", Photo = new byte[] { 77, 78, 79 }, PersonId = 5 }
+                );
+
+
             modelBuilder.Entity<Blog>().HasData(
-                new Blog { BlogId = 1, Url = "http://blog1.com", OwnerId = 1, Rating = 3 },
-                new Blog { BlogId = 2, Url = "http://blog2.com", OwnerId = 2, Rating = 2 },
-                new Blog { BlogId = 3, Url = "http://blog3.com", OwnerId = 3, Rating = 1 },
+                new Blog { BlogId = 1, Url = "http://blog1.com", Rating = 3 },  // OwnerId removed because it prevent DataSeeding!
+                new Blog { BlogId = 2, Url = "http://blog2.com", Rating = 2 },
+                new Blog { BlogId = 3, Url = "http://blog3.com", Rating = 1 },
                 new Blog { BlogId = 4, Url = "http://blog5.com" }
                 );
 

@@ -12,7 +12,7 @@ namespace ServiceLayer.BlogService
             {
                 BlogId = b.BlogId,
                 Url = b.Url,
-                Rating = b.Rating,
+                Rating = b.Rating,   
                 Owner = b.Owner.Name,
                 NumberOfPosts = b.Posts.Count()
             });

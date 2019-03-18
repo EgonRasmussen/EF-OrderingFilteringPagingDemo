@@ -6,8 +6,8 @@ namespace ServiceLayer.BlogService
 {
     public class ListBlogService
     {
+        // Dependency Injection of Context
         private readonly BloggingContext _context;
-
         public ListBlogService(BloggingContext context)
         {
             _context = context;
