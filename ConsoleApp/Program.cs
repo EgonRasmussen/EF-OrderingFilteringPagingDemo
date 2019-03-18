@@ -20,6 +20,8 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
+            InitializeDb();
+
             using (var context = new BloggingContext())
             {
                 // Tuples for DropDownControl i webclient
@@ -52,6 +54,16 @@ namespace ConsoleApp
                 //        blog.NumberOfPosts
                 //        );
                 //}
+            }
+        }
+
+        private static void InitializeDb()
+        {
+            using (var context = new BloggingContext())
+            {
+                context.Database.EnsureDeleted();
+                context.Database.EnsureCreated();
+                Console.WriteLine("Database recreated");
             }
         }
     }
