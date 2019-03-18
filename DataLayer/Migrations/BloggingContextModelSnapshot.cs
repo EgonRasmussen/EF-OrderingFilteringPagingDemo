@@ -229,7 +229,7 @@ namespace DataLayer.Migrations
                             AuthorId = 5,
                             BlogId = 2,
                             Content = "Dette er post 1 i Blog 2",
-                            Rating = 0,
+                            Rating = 1,
                             Title = "Post 1"
                         },
                         new
@@ -238,7 +238,7 @@ namespace DataLayer.Migrations
                             AuthorId = 6,
                             BlogId = 2,
                             Content = "Dette er post 2 i Blog 2",
-                            Rating = 0,
+                            Rating = 2,
                             Title = "Post 2"
                         },
                         new
@@ -246,7 +246,7 @@ namespace DataLayer.Migrations
                             PostId = 6,
                             BlogId = 3,
                             Content = "Dette er post 1 i Blog 3",
-                            Rating = 0,
+                            Rating = 3,
                             Title = "Post 1"
                         });
                 });

@@ -191,9 +191,9 @@ namespace DataLayer.Migrations
                     { 1, 1, 1, "Dette er Post 1 i Blog 1", 2, "Post 1" },
                     { 2, 4, 1, "Dette er Post 2 i Blog 1", 3, "Post 2" },
                     { 3, 4, 1, "Dette er Post 3 i Blog 1", 4, "Post 3" },
-                    { 4, 5, 2, "Dette er post 1 i Blog 2", 0, "Post 1" },
-                    { 5, 6, 2, "Dette er post 2 i Blog 2", 0, "Post 2" },
-                    { 6, null, 3, "Dette er post 1 i Blog 3", 0, "Post 1" }
+                    { 4, 5, 2, "Dette er post 1 i Blog 2", 1, "Post 1" },
+                    { 5, 6, 2, "Dette er post 2 i Blog 2", 2, "Post 2" },
+                    { 6, null, 3, "Dette er post 1 i Blog 3", 3, "Post 1" }
                 });
 
             migrationBuilder.InsertData(
