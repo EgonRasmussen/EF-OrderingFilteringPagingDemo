@@ -37,7 +37,7 @@ namespace DataLayer
                 );
 
             modelBuilder.Entity<Person>().HasData(
-               new Person { PersonId = 1, Name = "Person 1" },
+               new Person { PersonId = 1, Name = "Person 1" }, 
                new Person { PersonId = 2, Name = "Person 2" },
                new Person { PersonId = 3, Name = "Person 3" },
                new Person { PersonId = 4, Name = "Person 4" },
