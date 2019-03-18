@@ -14,6 +14,8 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
+            //InitializeDb();
+
             using (var context = new BloggingContext())
             {
                 var blogService = new ListBlogService(context);
@@ -33,6 +35,16 @@ namespace ConsoleApp
                         blog.NumberOfPosts
                         );
                 }
+            }
+        }
+
+        private static void InitializeDb()
+        {
+            using (var context = new BloggingContext())
+            {
+                context.Database.EnsureDeleted();
+                context.Database.EnsureCreated();
+                Console.WriteLine("Database recreated");
             }
         }
     }
