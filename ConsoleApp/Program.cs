@@ -16,7 +16,7 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            //InitializeDb();
+            InitializeDb();
 
             using (var context = new BloggingContext())
             {
