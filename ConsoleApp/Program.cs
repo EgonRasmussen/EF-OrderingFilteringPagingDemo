@@ -22,7 +22,7 @@ namespace ConsoleApp
 
                 var blogs = blogService.SortFilterPage(new SortFilterPageOptions
                 {
-                    OrderByOptions = OrderByOptions.SimpleOrder
+                    OrderByOptions = OrderByOptions.ByRatings
                 }).ToList();
 
                 foreach (BlogListDto blog in blogs)
