@@ -24,24 +24,25 @@ namespace ConsoleApp
 
             using (var context = new BloggingContext())
             {
-                // Tuples for DropDownControl i webclient
+
+                #region Query for Select Control i webclient
                 var blogFilterDropdownService = new BlogFilterDropdownService(context);
-                var dropdownItems = blogFilterDropdownService.GetFilterDropDownValues(BlogsFilterBy.ByOwner).ToList();
+                var dropdownItems = blogFilterDropdownService.GetFilterDropDownValues(BlogsFilterBy.ByRatings).ToList();
 
                 foreach (var item in dropdownItems)
                 {
                     Console.WriteLine("{0} - {1}", item.Value, item.Text);
                 }
+                #endregion
 
 
-
-
+                #region Query for Filtering
                 //var blogService = new ListBlogService(context);
                 //var blogs = blogService.SortFilterPage(new SortFilterPageOptions
                 //{
                 //    OrderByOptions = OrderByOptions.SimpleOrder,
-                //    FilterBy = BlogsFilterBy.ByOwner,
-                //    FilterValue = "Person 3"
+                //    FilterBy = BlogsFilterBy.ByRatings,
+                //    FilterValue = "2"
                 //}).ToList();
 
                 //foreach (BlogListDto blog in blogs)
@@ -53,7 +54,8 @@ namespace ConsoleApp
                 //        blog.Owner,
                 //        blog.NumberOfPosts
                 //        );
-                //}
+                //} 
+                #endregion
             }
         }
 
