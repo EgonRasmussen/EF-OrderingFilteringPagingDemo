@@ -22,9 +22,10 @@ namespace ConsoleApp
 
                 var blogs = blogService.SortFilterPage(new SortFilterPageOptions
                 {
-                    OrderByOptions = OrderByOptions.ByRatings
+                    OrderByOptions = OrderByOptions.ByOwner
                 }).ToList();
 
+                Console.ForegroundColor = ConsoleColor.Green;
                 foreach (BlogListDto blog in blogs)
                 {
                     Console.WriteLine("\nBlogId: {0} \nUrl: {1} \nRating: {2} \nOwner {3} \nNumber of Posts: {4}",
@@ -35,6 +36,7 @@ namespace ConsoleApp
                         blog.NumberOfPosts
                         );
                 }
+                Console.ForegroundColor = ConsoleColor.White;
             }
         }
 
