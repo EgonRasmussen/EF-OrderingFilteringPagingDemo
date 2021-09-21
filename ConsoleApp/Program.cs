@@ -1,7 +1,5 @@
 ﻿// DataLayer kræver følgende Nugets
 //      Install-Package Microsoft.EntityFrameworkCore.SqlServer
-//      Install-Package Microsoft.Extensions.Logging.Console
-//      Install-Package Microsoft.EntityFrameworkCore.Tools
 // ConsoleApp kræver følgende NuGet:
 //      Install-Package Microsoft.EntityFrameworkCore.Design
 
